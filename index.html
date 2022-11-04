@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pomodora Timer Sample</title>
+
+    <!-- FONT -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@500&family=Raleway:wght@500&display=swap" rel="stylesheet">
+
+    <!-- ICONS -->
+    <script src="https://kit.fontawesome.com/6913c766ad.js" crossorigin="anonymous"></script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <section>
+        <div id="mySideNav" class="sideNav">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <div class="tab">
+                <button class="tablinks" onclick="openTimer(event, 'pomodoro'); closeNav()">Pomodoro</button>
+                <button class="tablinks" onclick="openTimer(event, 'custom'); closeNav()">Custom</button>
+            </div>
+        </div>
+    
+        <div id="main">
+            <span id="navButton" onclick="openNav()">&#9776;</span>
+            <div id="pomodoro" class="tabcontent">
+                <div class="container">
+                    <h1>POMODORO TIMER</h1>
+        
+                    <div class="panel">
+                        <p id="work">work</p>
+                        <p id="break">break</p>
+                    </div>
+        
+                    <div class="timer">
+                        <div class="circle">
+                            <div class="time">
+                                <p id="minutes"></p>
+                                <p>:</p>
+                                <p id="seconds"></p>
+                            </div>
+                        </div>
+                    </div>
+        
+                    <div class="control">
+                        <button id="start" onClick="start()"><i class="fa-solid fa-play"></i></button>
+                        <a id="reset" href="./"><i class="fa-solid fa-rotate-left"></i></a>
+                    </div>
+                </div>  
+            </div>
+    
+            <div id="custom" class="tabcontent">
+                <div class="container">
+                    <h1>CUSTOM TIMER</h1>
+
+                    <div class="customization">
+                        <div class="custom_work">
+                            <h2 id="work">work</h2>
+                        </div>
+                        <div class="custom_break">
+                            <h2 id="break">break</h2>
+                        </div>
+                    </div>
+
+                    <div class="">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </section>
+
+
+    <!-- SCRIPT -->
+    <script src="./script.js"></script>
+</body>
+</html>
