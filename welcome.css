@@ -18,7 +18,7 @@ section{
 
 section::before{
     content: "";
-    background: url(images/Japanese_Garden.JPG)no-repeat;
+    background: url(images/Japanese_Garden.png)no-repeat;
     background-size: cover;
     position: absolute;
     top: 0px;
