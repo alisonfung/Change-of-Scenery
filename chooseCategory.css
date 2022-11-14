@@ -1,0 +1,62 @@
+body{
+   position: absolute;
+   width: 90%;
+   height: 90%;
+   background: #EFDBBC; 
+   font-family: 'Raleway';
+}
+.optionPics{
+    position: absolute;
+    width: 24.6%;
+    height: 29.7%;
+    border: 5px solid #000000;
+    top:30%;
+    align-items:center;
+}
+#option1,#label1,#description1,#link1,#city1,#cityLabel1,#cityD1,#goToCity1,#cafe1,#cafeLabel1,#cafeD1,#goToCafe1,#garden1,#gardenLabel1,#gardenD1,#goToGarden1{
+    left:12.5%;
+}
+#option2,#label2,#description2,#link2,#city2,#cityLabel2,#cityD2,#goToCity2,#cafe2,#cafeLabel2,#cafeD2,#goToCafe2,#garden2,#gardenLabel2,#gardenD2,#goToGarden2{
+    left: 42.5%;
+}
+#option3,#label3,#description3,#link3,#city3,#cityLabel3,#cityD3,#goToCity3,#cafe3,#cafeLabel3,#cafeD3,#goToCafe3,#garden3,#gardenLabel3,#gardenD3,#goToGarden3{
+    left: 72.5%;
+}
+.header{
+    position:absolute;
+    font-style:normal;
+    font-weight:600;
+    font-size:64px;
+    line-height: 78px;
+    top: 5%;
+    left:35%;
+    
+}
+.labels{
+    position: absolute;
+    top:60%;
+    text-align:center;
+    font-size:3vh;
+    font-weight:600;
+}
+.descriptions{
+    position:absolute;
+    top:65%;
+    text-align:center;
+    font-size:3vh;
+    font-weight:200;
+}
+.links{
+    position:absolute;
+    top:75%;
+    text-align:center;
+    font-size:3vh;
+    font-weight: 600;
+    background-color:#EAD2CD;
+    width: 10%;
+    height: 5%;
+    padding: 1em;
+    text-decoration: none;
+    border: 5px solid black;
+    color:#000000;
+}
