@@ -1,3 +1,49 @@
+
+
+header{
+    position: relative;
+    width: 100%;
+    padding-left: 50px;
+    padding-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(239, 219, 188, 1);
+
+}
+
+header .navigation a{
+    position: relative;
+    color: #000;
+    text-decoration: none;
+    font-weight: 500;
+    letter-spacing: 1px;
+    font-size: 35px;
+    border-radius: 30px;
+    transition: 0.3s;
+    transition-property: background;
+}
+
+header .navigation a:not(:last-child){
+    margin-right: 40px;
+}
+
+header .logo{
+    color: #000;
+    font-size: 30px;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 800;
+    letter-spacing: 1px;
+    padding: 2px 15px;
+
+}
+
+header .navigation a:hover{
+    background: #fff;
+    text-decoration: underline;
+}
+
 body{
    position: absolute;
    width: 90%;
@@ -6,57 +52,79 @@ body{
    font-family: 'Raleway';
 }
 .optionPics{
-    position: absolute;
-    width: 24.6%;
-    height: 29.7%;
+    width: 22vw;
+    height: 15vw;
     border: 5px solid #000000;
-    top:30%;
-    align-items:center;
+    display: block;
+    margin: auto;
+
 }
-#option1,#label1,#description1,#link1,#city1,#cityLabel1,#cityD1,#goToCity1,#cafe1,#cafeLabel1,#cafeD1,#goToCafe1,#garden1,#gardenLabel1,#gardenD1,#goToGarden1{
-    left:12.5%;
+.column-left{ float: left; width: 33%; align-items: center; justify-items: center;}
+.column-right{ float: right; width: 33%; align-items: center; justify-items: center;}
+.column-center{ display: inline-block; width: 33%; align-items: center; justify-items: center;}
+
+@media screen and (max-width: 960px) {
+    .column-left{ float: none; width: 100%; }
+    .column-right{ float: none; width: 100%; }
+    .column-center{ display: block; width: 100%; }
 }
-#option2,#label2,#description2,#link2,#city2,#cityLabel2,#cityD2,#goToCity2,#cafe2,#cafeLabel2,#cafeD2,#goToCafe2,#garden2,#gardenLabel2,#gardenD2,#goToGarden2{
-    left: 42.5%;
+
+.row {
+    margin-left: 5vw;
+    margin-right: 5vw;
+    top: -5vw;
 }
-#option3,#label3,#description3,#link3,#city3,#cityLabel3,#cityD3,#goToCity3,#cafe3,#cafeLabel3,#cafeD3,#goToCafe3,#garden3,#gardenLabel3,#gardenD3,#goToGarden3{
-    left: 72.5%;
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
 }
-.header{
-    position:absolute;
+
+.title{
     font-style:normal;
     font-weight:600;
-    font-size:64px;
+    font-size:5vw;
     line-height: 78px;
-    top: 5%;
-    left:35%;
-    
+    text-align: center;
+    position: relative;
+    top: -2vw;
 }
 .labels{
-    position: absolute;
     top:60%;
-    text-align:center;
     font-size:3vh;
     font-weight:600;
+
+    text-align:center;
 }
 .descriptions{
-    position:absolute;
     top:65%;
     text-align:center;
     font-size:3vh;
     font-weight:200;
+    margin-left: 2vw;
+    margin-right: 2vw;
+}
+.center {
+    text-align:center;
+    width: 100%;
+
+
 }
 .links{
-    position:absolute;
-    top:75%;
     text-align:center;
+    display:inline-block;
+    top:75%;
     font-size:3vh;
     font-weight: 600;
     background-color:#EAD2CD;
-    width: 10%;
+    width: 15vw;
     height: 5%;
     padding: 1em;
-    text-decoration: none;
     border: 5px solid black;
     color:#000000;
+    text-decoration: none;
+    margin-left:auto;
+    margin-right:auto;
+    margin-bottom: 5vw;
 }
