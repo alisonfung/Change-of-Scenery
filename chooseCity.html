@@ -7,22 +7,41 @@
 
     </head>
     <body>
-        <h1 class = "header">City Scenery</h1>
-        <img id = "city1" class = "optionPics" src = "images/Tokyo.png">
-        <img id = "city2" class = "optionPics" src = "images/Bayside_Sunset.png">
-        <img id = "city3" class = "optionPics" src = "images/Taiwan_Fireworks.png">
-        <br>
-        <p id = "cityLabel1" class = "labels">Tokyo</p>
-        <p id = "cityLabel2" class = "labels">Bayside Sunset</p>
-        <p id = "cityLabel3" class = "labels">Taiwan Fireworks</p>
-        <br>
-        <p id = "cityD1" class = "descriptions">Visit Tokyo</p>
-        <p id = "cityD2" class = "descriptions">Enjoy a sunset!</p>
-        <p id = "cityD3" class = "descriptions">See some beautiful fireworks!</p>
-        <br>
-        <a id = "goToCity1" href = "actualScenery.html"class = "links">Visit Tokyo </a>
-        <a id = "goToCity2" href = "actualScenery.html" class = "links">Visit Here</a>
-        <a id = "goToCity3" href = "actualScenery.html" class = "links">Visit Taiwan</a>
+    <header>
+        <div class="navigation">
+            <a id="home" href="index.html">home</a>
+            <a id="scenery" href="chooseCategory.html">scenery list</a>
+            <a id="about" href="#">about</a>
+        </div>
+        <h2><a href="#" class="logo">Logo</a></h2>
+    </header>
+    <div class="title"><p>Cities</p></div>
+    <div class="row">
+        <div class="column-left">
+            <img id = "option1" class = "optionPics" src = "images/Tokyo.png">
+            <p id="label1" class = "labels">Tokyo</p>
+            <p id = "description1" class = "descriptions">Explore the night life in Tokyo, Japan!</p>
+            <div class = "center">
+                <a id = "link1" href = "actualScenery.html" class = "links">Visit Here</a>
+            </div>
+        </div>
+        <div class="column-center">
+            <img id = "option2" class = "optionPics" src = "images/Bayside_Sunset.png">
+            <p id="label2" class="labels">Bayside Sunset</p>
+            <p id = "description2" class = "descriptions">Take some time to be alone with your thoughts and watch the sunset</p>
+            <div class = "center">
+                <a id="link2" href = "actualScenery.html" class = "links">Visit Here</a>
+            </div>
+        </div>
+        <div class="column-right">
+            <img id = "option3" class = "optionPics" src = "images/Taiwan_Fireworks.png">
+            <p id="label3" class="labels">Taiwan Fireworks</p>
+            <p id = "description3" class = "descriptions">Watch a fireworks show in Taiwan!</p>
+            <div class = "center">
+                <a id = "link3" href = "actualScenery.html" class = "links">Visit Here</a>
+            </div>
+        </div>
+    </div>
 
     </body>
 </html>
