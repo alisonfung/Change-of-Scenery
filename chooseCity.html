@@ -42,6 +42,30 @@
             </div>
         </div>
     </div>
+        <script>
+            //Save place choice into local storage, then go to actual scenery
+            const tokyo = document.getElementById("link1");
+            const bayside = document.getElementById("link2");
+            const taiwan = document.getElementById("link3");
+            tokyo.addEventListener('click', function(e){
+                e.preventDefault();
+                const placeValue = 6;
+                localStorage.setItem('place',placeValue);
+                window.location.href = "actualScenery.html"
+            })
+            bayside.addEventListener('click', function(e){
+                e.preventDefault();
+                const placeValue = 7;
+                localStorage.setItem('place',placeValue);
+                window.location.href = "actualScenery.html"
+            })
+            taiwan.addEventListener('click', function(e){
+                e.preventDefault();
+                const placeValue = 8;
+                localStorage.setItem('place',placeValue);
+                window.location.href = "actualScenery.html"
+            })
+        </script>
 
     </body>
 </html>
