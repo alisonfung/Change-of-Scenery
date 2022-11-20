@@ -4,6 +4,7 @@
     <title>Studying...</title>
     <link rel = "stylesheet" href = "actualScenery.css">
     <link rel = "stylesheet" href = "https://fonts.googleapis.com/css?family=Raleway">
+    <script src = "actualScenery.js"></script>
 
 </head>
 <body>
@@ -20,7 +21,11 @@
     <div class =  "scenery">
         <img src = "images/Japanese_Garden.png">
     </div>
-
+    <script>
+         const pic = localStorage.getItem('place');
+        let picNum = parseInt(pic);
+        selectScenery(picNum);
+    </script>
 
  
 </body>
