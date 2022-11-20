@@ -42,5 +42,28 @@
             </div>
         </div>
     </div>
+    <script>
+            const cafe = document.getElementById("link1");
+            const library = document.getElementById("link2");
+            const tavern = document.getElementById("link3");
+            cafe.addEventListener('click', function(e){
+                e.preventDefault();
+                const placeValue = 3;
+                localStorage.setItem('place',placeValue);
+                window.location.href = "actualScenery.html"
+            })
+            library.addEventListener('click', function(e){
+                e.preventDefault();
+                const placeValue = 4;
+                localStorage.setItem('place',placeValue);
+                window.location.href = "actualScenery.html"
+            })
+            tavern.addEventListener('click', function(e){
+                e.preventDefault();
+                const placeValue = 5;
+                localStorage.setItem('place',placeValue);
+                window.location.href = "actualScenery.html"
+            })
+            </script>
     </body>
 </html>
