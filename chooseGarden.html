@@ -41,6 +41,30 @@
                 <a id = "link3" href = "actualScenery.html" class = "links">Visit Here</a>
             </div>
         </div>
+         <script>
+            //Store selection in local storage, then go to the next page
+            const rose = document.getElementById("link1");
+            const japaneseGarden = document.getElementById("link2");
+            const palace = document.getElementById("link3");
+            rose.addEventListener('click', function(e){
+                e.preventDefault();
+                const placeValue = 0;
+                localStorage.setItem('place',placeValue);
+                window.location.href = "actualScenery.html"
+            })
+            japaneseGarden.addEventListener('click', function(e){
+                e.preventDefault();
+                const placeValue = 1;
+                localStorage.setItem('place',placeValue);
+                window.location.href = "actualScenery.html"
+            })
+            palace.addEventListener('click', function(e){
+                e.preventDefault();
+                const placeValue = 2;
+                localStorage.setItem('place',placeValue);
+                window.location.href = "actualScenery.html"
+            })
+        </script>
     </div>
     </body>
 </html>
