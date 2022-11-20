@@ -2,15 +2,15 @@
 function selectScenery(num){
     console.log("reached");
     var sceneryOptions = [
-        "SceneryPics/rosegarden.jpg",
-        "SceneryPics/japanesegarden.jfif",
-        "SceneryPics/sanantongarden.png",
-        "SceneryPics/cafe.webp",
-        "SceneryPics/nylibrary.avif",
-        "SceneryPics/bar.jpeg",
-        "SceneryPics/tokyo.jpeg",
-        "SceneryPics/baysidesunset.jpeg",
-        "SceneryPics/taiwanfireworks.jpeg"
+        "images/Rose_Garden.png",
+        "images/Japanese_Garden.png",
+        "images/Palace_Garden.png",
+        "images/Cafe.png",
+        "images/NewYork_Library.png",
+        "images/Tavern.png",
+        "images/Tokyo.png",
+        "images/Bayside_Sunset.png",
+        "images/Taiwan_Fireworks.png"
     ];
     var labels =[
         "Rose Garden",
