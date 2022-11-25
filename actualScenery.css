@@ -67,5 +67,84 @@ img {
     max-height:90vh;
     object-fit: contain;
 
+}
+
+.container-box {
+    width:100%;
+    text-align:center;
+}
+.settings-title{
+    font-style:normal;
+    font-weight:600;
+    font-size: 5vh;
+    text-align: center;
+    text-decoration-line: underline;
+
 
 }
+.sound-title{
+    top:65%;
+    text-align:left;
+    font-size:4vh;
+    font-weight:800;
+
+}
+#overlay {
+    margin: auto;
+    position: fixed;
+    top: 5vw;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 50%;
+    height: 60%;
+    background-color: rgba(217, 217, 217, 0.5);
+    z-index: 2;
+
+}
+
+.close-button{
+    font-size: 6vw;
+    font-weight:800;
+    float:right;
+    cursor: pointer;
+    border: none;
+    background:none;
+    margin-right: 1vw;
+    position: absolute;
+    right: 0%;
+    transform: translate(-0%, -0%)
+}
+.row{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin:0;
+    align-content: space-evenly;
+}
+audio {
+    width: 12vw;
+    height: 2vw;
+
+
+}
+
+audio::-webkit-media-controls-panel {
+    -webkit-justify-content: center;
+    height: 25px;
+
+}
+
+/* Removes the timeline */
+audio::-webkit-media-controls-timeline {
+    display: none;
+}
+
+/* Removes the time stamp */
+audio::-webkit-media-controls-current-time-display {
+    display: none;
+}
+audio::-webkit-media-controls-time-remaining-display {
+    display: none;
+}
+
