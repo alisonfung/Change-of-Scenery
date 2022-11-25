@@ -6,6 +6,7 @@ header{
     justify-content: space-between;
     align-items: center;
     background: rgba(239, 219, 188, 1);
+    font-family: 'Raleway', sans-serif;
 
 }
 
@@ -79,6 +80,9 @@ img {
     font-size: 5vh;
     text-align: center;
     text-decoration-line: underline;
+    font-family: 'Raleway', sans-serif;
+    padding-bottom: 5vw;
+    padding-top:2vw;
 
 
 }
@@ -87,6 +91,7 @@ img {
     text-align:left;
     font-size:4vh;
     font-weight:800;
+    font-family: 'Raleway', sans-serif;
 
 }
 #overlay {
@@ -120,7 +125,8 @@ img {
     align-items: center;
     justify-content: space-evenly;
     margin:0;
-    align-content: space-evenly;
+    align-content: space-between;
+    padding-bottom:5vw;
 }
 audio {
     width: 12vw;

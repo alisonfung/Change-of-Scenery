@@ -13,10 +13,11 @@ body{
 }
 nav{
     cursor: move;
+    z-index:1;
     width: 70px;
     margin-top: 70px;
     margin-left: auto;
-    position: fixed;
+    position: relative;
     right:0;
     transition: all 0.2s linear;
     box-shadow: 2px 2px 8px 0px rgba(0,0,0,.4);
@@ -56,3 +57,5 @@ a:hover {
 nav li:nth-child(n) a{
     background: lightgray;
 }
+
+

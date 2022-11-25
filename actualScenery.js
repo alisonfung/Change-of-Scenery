@@ -1,4 +1,9 @@
 
+window.onload = function() {
+    var backgroundAudio=document.getElementById("birds");
+    backgroundAudio.volume=0.2;
+}
+
 function selectScenery(num){
     console.log("reached");
     var sceneryOptions = [
@@ -40,10 +45,6 @@ function off() {
     document.getElementById("overlay").style.display = "none";
 }
 
-window.onload = function() {
-    var backgroundAudio=document.getElementById("birds");
-    backgroundAudio.volume=0.2;
-}
 
 function showSpotify()
 {
@@ -54,3 +55,42 @@ function showSpotify()
         x.style.display = "none";
     }
 }
+
+function showSettings()
+{
+    var x = document.getElementById("overlay");
+    if (x.style.display === "none") {
+        x.style.display = "block";
+    } else {
+        x.style.display = "none";
+    }
+}
+
+var muted = false;
+function mutePage() {
+    var elems = document.querySelectorAll("video, audio");
+    if (muted) {
+        [].forEach.call(elems, function (elem) {
+            unmuteMe(elem);
+        });
+        muted = false;
+    } else {
+        [].forEach.call(elems, function (elem) {
+            muteMe(elem);
+        });
+        muted = true;
+    }
+}
+
+function muteMe(elem) {
+    elem.pause();
+}
+
+function unmuteMe(elem) {
+    elem.play();
+}
+
+
+
+
+

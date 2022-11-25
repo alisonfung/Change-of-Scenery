@@ -20,14 +20,15 @@
         </div>
 
     </header>
+    <div class="icon-bar">
     <nav>
         <ul>
-            <li><a href="#" >
+            <li><a href="#" onclick="showSettings()">
                 <i class="fa-solid fa-gear"></i>
                 <span>Settings</span></a>
             </li>
 
-            <li><a href="#">
+            <li><a href="#" onclick="mutePage()">
                 <i class="fa-solid fa-volume-high"></i>
                 <span>Sound</span></a>
             </li>
@@ -49,7 +50,7 @@
 
         </ul>
     </nav>
-
+    </div>
     <div id="myDIV" style="display: none">
         <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/7hZhwoGDXw3P89zrbErSBA?utm_source=generator"
                 width="75%" height="380" frameBorder="0" allowfullscreen=""
@@ -58,7 +59,7 @@
     </div>
 
     <div class="container-box">
-        <div id="overlay" >
+        <div id="overlay" style="display: none">
             <div>
                 <button class="close-button" onclick="off()">X</button>
             </div>
