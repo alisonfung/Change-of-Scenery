@@ -31,3 +31,16 @@ function selectScenery(num){
     console.log(labels[num]);
     header.textContent = labels[num];
 }
+
+function on() {
+    document.getElementById("overlay").style.display = "block";
+}
+
+function off() {
+    document.getElementById("overlay").style.display = "none";
+}
+
+window.onload = function() {
+    var backgroundAudio=document.getElementById("birds");
+    backgroundAudio.volume=0.2;
+}

@@ -4,6 +4,7 @@
     <title>Studying...</title>
     <link rel = "stylesheet" href = "actualScenery.css">
     <link rel = "stylesheet" href = "https://fonts.googleapis.com/css?family=Raleway">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css"/>
     <script src = "actualScenery.js"></script>
 
 </head>
@@ -17,6 +18,43 @@
         </div>
 
     </header>
+
+    <div class="container-box">
+        <div id="overlay" >
+            <div>
+                <button class="close-button" onclick="off()">X</button>
+            </div>
+            <div class="settings-title">
+                <p>settings</p>
+            </div>
+            <div class = "row">
+                <div class="sound-title" style="vertical-align: text-top">
+                    <p>water sounds</p>
+                </div>
+                    <audio controls controlsList="nodownload noplaybackrate" autoplay loop preload="auto" >
+                        <source src = "audio/watersounds.wav" type = "audio/wav"/>
+                    </audio>
+            </div>
+            <div class = "row">
+                <div class="sound-title" style="vertical-align: text-top">
+                    <p>birds chirping</p>
+                </div>
+                <audio controls controlsList="nodownload noplaybackrate" id="birds"autoplay loop preload="auto" >
+                    <source src = "audio/birds.wav" type = "audio/wav"/>
+                </audio>
+            </div>
+            <div class = "row">
+                <div class="sound-title" style="vertical-align: text-top">
+                    <p>leaves rustling</p>
+                </div>
+                <audio controls controlsList="nodownload noplaybackrate" autoplay loop preload="auto" >
+                    <source src = "audio/wind.wav" type = "audio/wav"/>
+                </audio>
+
+            </div>
+        </div>
+    </div>
+
 
     <div class =  "scenery">
         <img id = "current">
