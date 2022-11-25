@@ -44,3 +44,13 @@ window.onload = function() {
     var backgroundAudio=document.getElementById("birds");
     backgroundAudio.volume=0.2;
 }
+
+function showSpotify()
+{
+    var x = document.getElementById("myDIV");
+    if (x.style.display === "none") {
+        x.style.display = "block";
+    } else {
+        x.style.display = "none";
+    }
+}
