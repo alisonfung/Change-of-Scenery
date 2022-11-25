@@ -212,9 +212,16 @@ function stopTimer() {
     document.getElementById('reset').style.display = "none";
 }
 
+
+function clear() {
+    stop();
+}
+
+
 function backToCustom() {
     document.getElementById('final_timer').style.display = "none";
     document.getElementById('custom_timer').style.display = "contents";
     document.getElementById('back').style.display = "none";
     document.getElementById('done').style.display = "block";
 }
+

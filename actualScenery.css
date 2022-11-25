@@ -148,3 +148,10 @@ audio::-webkit-media-controls-time-remaining-display {
     display: none;
 }
 
+#myDIV{
+    margin-top: 80px;
+    margin-left: 10px;
+    position: absolute;
+    left:0;
+}
+
