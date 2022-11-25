@@ -7,22 +7,64 @@
 
     </head>
     <body>
-        <h1 class = "header">Garden Options</h1>
-        <img id = "garden1" class = "optionPics" src = "images/Rose_Garden.png">
-        <img id = "garden2" class = "optionPics" src = "images/Japanese_Garden.png">
-        <img id = "garden3" class = "optionPics" src = "images/Palace_Garden.png">
-        <br>
-        <p id="gardenLabel1" class = "labels">Rose Garden</p>
-        <p id = "gardenLabel2" class = "labels">Japanese Garden</p>
-        <p id = "gardenLabel3" class = "labels">Palace</p>
-        <br>
-        <p id = "gardenD1" class = "descriptions">Stop and smell the roses!</p>
-        <p id = "gardenD2" class = "descriptions">Study in a Japanese Garden</p>
-        <p id = "gardenD3" class = "descriptions">Visit a palace garden</p>
-        <br>
-        <a id="goToGarden1" class = "links" href = "actualScenery.html">Visit here!</a>
-        <a id="goToGarden2" class = "links" href = "actualScenery.html">Visit here!</a>
-        <a id= "goToGarden3" class = "links" href = "actualScenery.html">Visit here!</a>
-
+    <header>
+        <div class="navigation">
+            <a id="home" href="index.html">home</a>
+            <a id="scenery" href="chooseCategory.html">scenery list</a>
+            <a id="about" href="#">about</a>
+        </div>
+        <h2><a href="#" class="logo">Logo</a></h2>
+    </header>
+    <div class="title"><p>Gardens</p></div>
+    <div class="row">
+        <div class="column-left">
+            <img id = "option1" class = "optionPics" src = "images/Rose_Garden.png">
+            <p id="label1" class = "labels">Rose Garden</p>
+            <p id = "description1" class = "descriptions">Hmm.. this garden looks oddly familiar...</p>
+            <div class = "center">
+                <a id = "link1" href = "actualScenery.html" class = "links">Visit Here</a>
+            </div>
+        </div>
+        <div class="column-center">
+            <img id = "option2" class = "optionPics" src = "images/Japanese_Garden.png">
+            <p id="label2" class="labels">Japanese Garden</p>
+            <p id = "description2" class = "descriptions">Listen to the soothing sounds of water while you enjoy the scenery</p>
+            <div class = "center">
+                <a id="link2" href = "actualScenery.html" class = "links">Visit Here</a>
+            </div>
+        </div>
+        <div class="column-right">
+            <img id = "option3" class = "optionPics" src = "images/Palace_Garden.png">
+            <p id="label3" class="labels">Palace Garden</p>
+            <p id = "description3" class = "descriptions">Explore a secret palace garden!</p>
+            <div class = "center">
+                <a id = "link3" href = "actualScenery.html" class = "links">Visit Here</a>
+            </div>
+        </div>
+         <script>
+            //Store selection in local storage, then go to the next page
+            const rose = document.getElementById("link1");
+            const japaneseGarden = document.getElementById("link2");
+            const palace = document.getElementById("link3");
+            rose.addEventListener('click', function(e){
+                e.preventDefault();
+                const placeValue = 0;
+                localStorage.setItem('place',placeValue);
+                window.location.href = "actualScenery.html"
+            })
+            japaneseGarden.addEventListener('click', function(e){
+                e.preventDefault();
+                const placeValue = 1;
+                localStorage.setItem('place',placeValue);
+                window.location.href = "actualScenery.html"
+            })
+            palace.addEventListener('click', function(e){
+                e.preventDefault();
+                const placeValue = 2;
+                localStorage.setItem('place',placeValue);
+                window.location.href = "actualScenery.html"
+            })
+        </script>
+    </div>
     </body>
 </html>

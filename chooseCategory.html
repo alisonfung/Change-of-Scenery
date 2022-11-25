@@ -4,24 +4,44 @@
         <title>Choose Category!</title>
         <link rel = "stylesheet" href = "chooseCategory.css"> 
         <link rel = "stylesheet" href = "https://fonts.googleapis.com/css?family=Raleway">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
+    <header>
+        <div class="navigation">
+            <a id="home" href="index.html">home</a>
+            <a id="scenery" href="chooseCategory.html">scenery list</a>
+            <a id="about" href="#">about</a>
+        </div>
+        <h2><a href="#" class="logo">Logo</a></h2>
+    </header>
         <script src = "chooseCategory.js"></script>
-        <h1 class="header">Scenery Options</h1>
-        <img id = "option1" class = "optionPics" src = "images/Rose_Garden.png">
-        <img id = "option2" class = "optionPics" src = "images/Cafe.png">
-        <img id = "option3" class = "optionPics" src = "images/Tokyo.png">
-        <br>
-        <p id="label1" class = "labels">Gardens</p>
-        <p id="label2" class="labels">Cafe</p>
-        <p id="label3" class="labels">Cities</p>
-        <br>
-        <p id = "description1" class = "descriptions">Study in a garden!</p>
-        <p id = "description2" class = "descriptions">Study in a cafe!</p>
-        <p id = "description3" class = "descriptions">Study in a city!</p>
-        <br>
-        <a id = "link1" href = "chooseGarden.html" class = "links">Visit a Garden</a>
-        <a id="link2" href = "chooseCafe.html" class = "links">Visit a Cafe</a>
-        <a id = "link3" href = "chooseCity.html" class = "links">Visit a City</a>
+        <div class="title"><p>Scenery Options</p></div>
+        <div class="row">
+            <div class="column-left">
+                <img id = "option1" class = "optionPics" src = "images/Rose_Garden.png">
+                <p id="label1" class = "labels">Gardens</p>
+                <p id = "description1" class = "descriptions">Enjoy the flowers in a garden!</p>
+                <div class = "center">
+                    <a id = "link1" href = "chooseGarden.html" class = "links">Visit a Garden</a>
+                </div>
+            </div>
+            <div class="column-center">
+                <img id = "option2" class = "optionPics" src = "images/Cafe.png">
+                <p id="label2" class="labels">Cafes & Libraries</p>
+                <p id = "description2" class = "descriptions">Try a new cafe or a mysterious library!</p>
+                <div class = "center">
+                    <a id="link2" href = "chooseCafe.html" class = "links">Visit a Cafe</a>
+                </div>
+            </div>
+            <div class="column-right">
+                <img id = "option3" class = "optionPics" src = "images/Tokyo.png">
+                <p id="label3" class="labels">Cities</p>
+                <p id = "description3" class = "descriptions">Explore a new city!</p>
+                <div class = "center">
+                <a id = "link3" href = "chooseCity.html" class = "links">Visit a City</a>
+                </div>
+            </div>
+        </div>
     </body>
 </html>
