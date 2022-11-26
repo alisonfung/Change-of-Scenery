@@ -131,8 +131,6 @@ img {
 audio {
     width: 12vw;
     height: 2vw;
-
-
 }
 
 audio::-webkit-media-controls-panel {
@@ -154,10 +152,11 @@ audio::-webkit-media-controls-time-remaining-display {
     display: none;
 }
 
-#myDIV{
+#spotify{
     margin-top: 80px;
     margin-left: 10px;
     position: absolute;
+    z-index: 3;
     left:0;
 }
 

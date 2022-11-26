@@ -48,7 +48,7 @@ function off() {
 
 function showSpotify()
 {
-    var x = document.getElementById("myDIV");
+    var x = document.getElementById("spotify");
     if (x.style.display === "none") {
         x.style.display = "block";
     } else {
