@@ -49,6 +49,7 @@ function openTimer() {
     document.getElementById('done').style.display = "none"; 
     document.getElementById('back').style.display = "block"; 
     document.getElementById('minutes').innerHTML = document.getElementById("work_minutes").innerHTML;
+    workTitle.classList.add('active');
 }
 
 function openPomoTimer() {
@@ -61,95 +62,104 @@ function openPomoTimer() {
     document.getElementById('minutes').innerHTML = document.getElementById("work_minutes").innerHTML;
 }
 
-let workTitle = document.getElementById('work');
-let breakTitle = document.getElementById('break');
+let workTitle = document.getElementById('work_panel');
+let breakTitle = document.getElementById('break_panel');
 
 let seconds = "00"
 document.getElementById('seconds').innerHTML = seconds;
 
-var check = null;
+let breakCount = 0;
+
+var check = null ;
 
 //timer start
 function startTimer() {
     let workTime = document.getElementById("work_minutes").innerHTML;
     let breakTime = document.getElementById("break_minutes").innerHTML;
-
-    //change button
-    document.getElementById('start').style.display = "none";
-    document.getElementById('pause').style.display = "block";
-    document.getElementById('reset').style.display = "block";
-    
-
-    //change the time
-    seconds = 59;
-
-    let workMinutes = workTime - 1;
-    let breakMinutes = breakTime - 1;
-
-    breakCount =0;
-
-    //countdown
-    let timerFunction = () => {
-        //change the display
-        document.getElementById('minutes').innerHTML = workMinutes;
-        document.getElementById('seconds').innerHTML = seconds;
-
-        //start
-        seconds = seconds - 1;
-
-        if(seconds == 0) {
-            workMinutes = workMinutes - 1;
-            if(workMinutes <= -1) {
-                if((breakCount != 0) && (breakCount % 8 == 0)) {
-                    //start break
-                    workMinutes = breakMinutes + 10;
-                    breakCount++;
-
-                    //change the panel
-                    setTimeout(function() {
-                        workTitle.classList.remove('active');
-                        breakTitle.classList.add('active');
-                    }, 1)
-                    
-                }else if (breakCount % 2 == 0) {
-                    //start break
-                    workMinutes = breakMinutes;
-                    breakCount++;
-
-                    //change the panel
-                    setTimeout(function() {
-                        workTitle.classList.remove('active');
-                        breakTitle.classList.add('active');
-                    }, 1)
-                }else { //continue work
-                    workMinutes = workTime;
-                    breakCount++;
-
-                    //change the panel
-                    setTimeout(function() {
-                        breakTitle.classList.remove('active');
-                        workTitle.classList.add('active');
-                    }, 1)
-                    
-                }
-            }
-            seconds = 59;
-        }
+    if (workTime <= 0 || breakTime <= 0) {
+        window.alert("Time must be larger than 0!");
     }
-    
-    //start countdown
-    check = setInterval(timerFunction, 1);
+    else {
+
+        //change button
+        document.getElementById('start').style.display = "none";
+        document.getElementById('pause').style.display = "block";
+        document.getElementById('reset').style.display = "block";
+        
+
+        //change the time
+        seconds = 59;
+
+        let workMinutes = workTime - 1;
+        let breakMinutes = breakTime - 1;
+
+        //countdown
+        let timerFunction = () => {
+            //change the display
+            document.getElementById('minutes').innerHTML = workMinutes;
+            document.getElementById('seconds').innerHTML = seconds;
+
+            //start
+            seconds = seconds - 1;
+
+            if(seconds == 0) {
+                workMinutes = workMinutes - 1;
+                if(workMinutes <= -1) {
+                    if((breakCount != 0) && (breakCount % 8 == 0)) {
+                        //start break
+                        workMinutes = breakMinutes + 10;
+                        breakCount++;
+
+                        //change the panel
+                        setTimeout(function() {
+                            workTitle.classList.remove('active');
+                            breakTitle.classList.add('active');
+                        }, 1)
+                        
+                    }else if (breakCount % 2 == 0) {
+                        //start break
+                        workMinutes = breakMinutes;
+                        breakCount++;
+
+                        //change the panel
+                        setTimeout(function() {
+                            workTitle.classList.remove('active');
+                            breakTitle.classList.add('active');
+                        }, 1)
+                    }else { //continue work
+                        workMinutes = workTime - 1;
+                        breakCount++;
+
+                        //change the panel
+                        setTimeout(function() {
+                            breakTitle.classList.remove('active');
+                            workTitle.classList.add('active');
+                        }, 1)
+                        
+                    }
+                }
+                seconds = 59;
+            }
+        }
+        
+        //start countdown
+        check = setInterval(timerFunction, 100);
+    }
 }
 
 function pauseTimer() {
     clearInterval(check);
-    workMinutes = document.getElementById("minutes").innerHTML;
-    seconds = document.getElementById('seconds').innerHTML;
     document.getElementById('pause').style.display = "none";
     document.getElementById('resume').style.display = "block";
 }
 
 function resumeTimer() {
+    let workTime = document.getElementById("work_minutes").innerHTML;
+    let breakTime = document.getElementById("break_minutes").innerHTML;
+    let breakMinutes = breakTime -1;
+    let workMinutes = document.getElementById("minutes").innerHTML;
+    let seconds = document.getElementById('seconds').innerHTML
+
     let timerFunction = () => {
         //change the display
         document.getElementById('minutes').innerHTML = workMinutes;
@@ -159,8 +169,8 @@ function resumeTimer() {
         seconds = seconds - 1;
 
         if(seconds == 0) {
-            workMinutes = workMinutes - 1;
-            if(workMinutes <= -1) {
+            workMinutes = workMinutes -1 ;
+            if(workMinutes <0) {
                 if((breakCount != 0) && (breakCount % 8 == 0)) {
                     //start break
                     workMinutes = breakMinutes + 10;
@@ -183,7 +193,7 @@ function resumeTimer() {
                         breakTitle.classList.add('active');
                     }, 1)
                 }else { //continue work
-                    workMinutes = workTime;
+                    workMinutes = workTime - 1;
                     breakCount++;
 
                     //change the panel
@@ -191,13 +201,12 @@ function resumeTimer() {
                         breakTitle.classList.remove('active');
                         workTitle.classList.add('active');
                     }, 1)
-                    
                 }
             }
             seconds = 59;
         }
     }
-    check = setInterval(timerFunction, 1);
+    check = setInterval(timerFunction, 100);
     document.getElementById('pause').style.display = "block";
     document.getElementById('resume').style.display = "none";
 }
@@ -210,6 +219,9 @@ function stopTimer() {
     document.getElementById('pause').style.display = "none";
     document.getElementById('resume').style.display = "none";
     document.getElementById('reset').style.display = "none";
+    breakCount = 0;
+    breakTitle.classList.remove('active');
+    workTitle.classList.add('active');
 }
 
 function backToCustom() {
