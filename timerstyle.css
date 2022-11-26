@@ -12,17 +12,17 @@
     box-sizing: border-box;
 }
 
-html, body {
+html {
+    background-color: #ffffff;;
+}
+
+body {
     position: absolute;
     width: 983px;
     height: 570px;
     left: 230px;
     top: 162px;
     background-color: var(--color-primary);
-}
-
-section {
-    height: 570px;
 }
 
 p, i, h1, h2{
