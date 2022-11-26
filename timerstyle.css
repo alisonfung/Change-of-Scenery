@@ -239,22 +239,31 @@ i {
 
 .panel {
     position: absolute;
-    width: 232px;
-    height: 104px;
-    left: 579px;
+    display: flex;
+    flex-direction: column;
+    width: 460px;
+    height: 120px;
+    left: 490px;
     top: 163px;
-
+    
     font-family: 'Montserrat';
     font-style: normal;
     font-weight: 700;
-    font-size: 40px;
-    line-height: 98px;
-    text-align: center;
+    font-size: 30px;
+    justify-content: center;
+    align-items: center;
+}
 
+.panel p {
+    height: 25%;
+    color: var(--color-secondary);
 }
 
 .panel p.active {
-    font-size: 80px;
+    height: 75%;
+    color: var(--color-font);
+    font-size: 100px;
+    line-height: 90px;
 }
 
 .control button {
