@@ -1,113 +1,240 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Custom Timer Sample</title>
+let custom_workTime = "00";
+let custom_breakTime = "00";
+let custom_seconds = "00";
 
-    <!-- FONT -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Raleway:wght@500&display=swap" rel="stylesheet">
-    
-    <!-- ICONS -->
-    <script src="https://kit.fontawesome.com/6913c766ad.js" crossorigin="anonymous"></script>
+document.getElementById('work_minutes').innerHTML = custom_workTime;
+document.getElementById('work_seconds').innerHTML = custom_seconds;
+document.getElementById('break_minutes').innerHTML = custom_workTime;
+document.getElementById('break_seconds').innerHTML = custom_seconds;
 
-    <!-- CSS -->
-    <link rel="stylesheet" href="./timerstyle.css">
-</head>
+function increaseWork() {
+    custom_workTime = document.getElementById("work_minutes").innerHTML;
+    custom_workTime++;
+    if (custom_workTime > 60) {
+        custom_workTime = 0;
+    }
+    document.getElementById("work_minutes").innerHTML = custom_workTime;
+}
 
-<body>
-    <section id="customize_section">
-        <div id="custom_timer">
-            <div class="time_container">
-                <h1 id="custom">custom timer</h1>
-    
-                <div class="customization">
-                    <div class="custom_work">
-                        <div class="time_title">
-                            <h2 id="work">work</h2>
-                        </div>
-                        <div class="custom_worktime">
-                            <p id="work_minutes"></p>
-                            <p>:</p>
-                            <p id="work_seconds"></p>
-                        </div>
-                        <div class="custom_button" id="work_button">
-                            <button id="up" onclick="increaseWork()"><i class="fa-solid fa-square-caret-up"></i></button>
-                            <button id="down" onclick="decreaseWork()"><i class="fa-solid fa-square-caret-down"></i></button>
-                        </div>
-                    </div>
-    
-                    <div class="custom_break">
-                        <div class="time_title">
-                            <h2 id="break">break</h2>
-                        </div>
-                        <div class="custom_breaktime">
-                            <p id="break_minutes"></p>
-                            <p>:</p>
-                            <p id="break_seconds"></p>
-                        </div>
-                        <div class="custom_button" id="break_button">
-                            <button id="up" onclick="increaseBreak()"><i class="fa-solid fa-square-caret-up"></i></button>
-                            <button id="down" onclick="decreaseBreak()"><i class="fa-solid fa-square-caret-down"></i></button>
-                        </div>
-                    </div>
-    
-                    <div class="finish_setup">
-                        <button id="done" onclick="openTimer()">done</button>
-                    </div>
-                </div>
-            </div>
-            <div class="auto_pomo">
-                <button id="auto" onclick="openPomoTimer()">Or try using Pomodoro Timer here!</button>
-            </div>
-        </div>
-    </section>
+function decreaseWork() {
+    custom_workTime = document.getElementById("work_minutes").innerHTML;
+    custom_workTime--;
+    if (custom_workTime < 0) {
+        custom_workTime = 60;
+    }
+    document.getElementById("work_minutes").innerHTML = custom_workTime;
+}
 
-    <section id="timer_section">
-        <div id="final_timer"> 
+function increaseBreak() {
+    custom_breakTime = document.getElementById("break_minutes").innerHTML;
+    custom_breakTime++;
+    if (custom_breakTime > 60) {
+        custom_breakTime = 0;
+    }
+    document.getElementById("break_minutes").innerHTML = custom_breakTime;
+}
 
-            <div class="final_time_container">
-                <h1 id="final">timer</h1>
+function decreaseBreak() {
+    custom_breakTime = document.getElementById("break_minutes").innerHTML;
+    custom_breakTime--;
+    if (custom_breakTime < 0) {
+        custom_breakTime = 60;
+    }
+    document.getElementById("break_minutes").innerHTML = custom_breakTime;
+}
 
-                <div class="final_time_clock">
-                    <div class="timer_part">
-                        <div class="circle">
-                            <div class="time">
-                                <p id="minutes"></p>
-                                <p>:</p>
-                                <p id="seconds"></p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="control_panel">
-                        <div class="control_panel_container">
-                            <div class="panel">
-                                <p id="work_panel">work</p>
-                                <p id="break_panel">break</p>
-                            </div>
-                
-                            <div class="time_control">
-                                <button id="start" onclick="startTimer()"><i class="fa-solid fa-play"></i>start</button>
-                                <button id="pause" onclick="pauseTimer()"><i class="fa-solid fa-pause"></i>pause</button>
-                                <button id="resume" onclick="resumeTimer()"><i class="fa-solid fa-play"></i>resume</button>
-                                <button id="reset" onclick="stopTimer()"><i class="fa-solid fa-rotate-left"></i>reset</button>
-                            </div>
-                        </div>
+function openTimer() {
+    document.getElementById('customize_section').style.display = "none";
+    document.getElementById('timer_section').style.visibility = "visible";
+    document.getElementById('done').style.display = "none"; 
+    document.getElementById('time_back').style.display = "block"; 
+    document.getElementById('minutes').innerHTML = document.getElementById("work_minutes").innerHTML;
+    workTitle.classList.add('active');
+}
+
+function openPomoTimer() {
+    document.getElementById('customize_section').style.display = "none";
+    document.getElementById('timer_section').style.visibility = "visible";
+    document.getElementById('done').style.display = "none"; 
+    document.getElementById('time_back').style.display = "block"; 
+    document.getElementById("work_minutes").innerHTML = 25;
+    document.getElementById("break_minutes").innerHTML = 5;
+    document.getElementById('minutes').innerHTML = document.getElementById("work_minutes").innerHTML;
+    workTitle.classList.add('active');
+}
+
+let workTitle = document.getElementById('work_panel');
+let breakTitle = document.getElementById('break_panel');
+
+let seconds = "00"
+document.getElementById('seconds').innerHTML = seconds;
+
+let breakCount = 0;
+
+var check = null ;
+
+//timer start
+function startTimer() {
+    let workTime = document.getElementById("work_minutes").innerHTML;
+    let breakTime = document.getElementById("break_minutes").innerHTML;
+    if (workTime <= 0 || breakTime <= 0) {
+        window.alert("Time must be larger than 0!");
+    }
+    else {
+
+        //change button
+        document.getElementById('start').style.display = "none";
+        document.getElementById('pause').style.display = "block";
+        document.getElementById('reset').style.display = "block";
         
-                    </div>
-                </div>  
-            </div>
-            
-            <div class="time_nav">
-                <button id="time_back" onclick="stopTimer(); backToCustom()"><i class="fa-solid fa-chevron-left"></i>back</button>
-            </div>
-        </div>
-    </section>
-    <!-- SCRIPT -->
-    <script src="./script.js"></script>
-</body>
-</html>
+
+        //change the time
+        seconds = 59;
+
+        let workMinutes = workTime - 1;
+        let breakMinutes = breakTime - 1;
+
+        //countdown
+        let timerFunction = () => {
+            //change the display
+            document.getElementById('minutes').innerHTML = workMinutes;
+            document.getElementById('seconds').innerHTML = seconds;
+
+            //start
+            seconds = seconds - 1;
+
+            if(seconds == 0) {
+                workMinutes = workMinutes - 1;
+                if(workMinutes <= -1) {
+                    if((breakCount != 0) && (breakCount % 8 == 0)) {
+                        //start break
+                        workMinutes = breakMinutes + 10;
+                        breakCount++;
+
+                        //change the panel
+                        setTimeout(function() {
+                            workTitle.classList.remove('active');
+                            breakTitle.classList.add('active');
+                        }, 1)
+                        
+                    }else if (breakCount % 2 == 0) {
+                        //start break
+                        workMinutes = breakMinutes;
+                        breakCount++;
+
+                        //change the panel
+                        setTimeout(function() {
+                            workTitle.classList.remove('active');
+                            breakTitle.classList.add('active');
+                        }, 1)
+                    }else { //continue work
+                        workMinutes = workTime - 1;
+                        breakCount++;
+
+                        //change the panel
+                        setTimeout(function() {
+                            breakTitle.classList.remove('active');
+                            workTitle.classList.add('active');
+                        }, 1)
+                        
+                    }
+                }
+                seconds = 59;
+            }
+        }
+        
+        //start countdown
+        check = setInterval(timerFunction, 100);
+    }
+}
+
+function pauseTimer() {
+    clearInterval(check);
+    document.getElementById('pause').style.display = "none";
+    document.getElementById('resume').style.display = "block";
+}
+
+function resumeTimer() {
+    let workTime = document.getElementById("work_minutes").innerHTML;
+    let breakTime = document.getElementById("break_minutes").innerHTML;
+    let breakMinutes = breakTime -1;
+    let workMinutes = document.getElementById("minutes").innerHTML;
+    let seconds = document.getElementById('seconds').innerHTML
+
+    let timerFunction = () => {
+        //change the display
+        document.getElementById('minutes').innerHTML = workMinutes;
+        document.getElementById('seconds').innerHTML = seconds;
+
+        //start
+        seconds = seconds - 1;
+
+        if(seconds == 0) {
+            workMinutes = workMinutes -1 ;
+            if(workMinutes <0) {
+                if((breakCount != 0) && (breakCount % 8 == 0)) {
+                    //start break
+                    workMinutes = breakMinutes + 10;
+                    breakCount++;
+
+                    //change the panel
+                    setTimeout(function() {
+                        workTitle.classList.remove('active');
+                        breakTitle.classList.add('active');
+                    }, 1)
+                    
+                }else if (breakCount % 2 == 0) {
+                    //start break
+                    workMinutes = breakMinutes;
+                    breakCount++;
+
+                    //change the panel
+                    setTimeout(function() {
+                        workTitle.classList.remove('active');
+                        breakTitle.classList.add('active');
+                    }, 1)
+                }else { //continue work
+                    workMinutes = workTime - 1;
+                    breakCount++;
+
+                    //change the panel
+                    setTimeout(function() {
+                        breakTitle.classList.remove('active');
+                        workTitle.classList.add('active');
+                    }, 1)
+                }
+            }
+            seconds = 59;
+        }
+    }
+    check = setInterval(timerFunction, 100);
+    document.getElementById('pause').style.display = "block";
+    document.getElementById('resume').style.display = "none";
+}
+
+function stopTimer() {
+    clearInterval(check);
+    document.getElementById("minutes").innerHTML = document.getElementById("work_minutes").innerHTML;
+    document.getElementById("seconds").innerHTML = "00";
+    document.getElementById('start').style.display = "block";
+    document.getElementById('pause').style.display = "none";
+    document.getElementById('resume').style.display = "none";
+    document.getElementById('reset').style.display = "none";
+    breakCount = 0;
+    breakTitle.classList.remove('active');
+    workTitle.classList.add('active');
+}
+
+
+function clear() {
+    stop();
+}
+
+
+function backToCustom() {
+    document.getElementById('timer_section').style.visibility = "hidden";
+    document.getElementById('customize_section').style.display = "";
+    document.getElementById('time_back').style.display = "none";
+    document.getElementById('done').style.display = "";
+}
+
