@@ -66,6 +66,17 @@ function showSettings()
     }
 }
 
+function showTimer()
+{
+    var x = document.getElementById("timer");
+    if (x.style.display === "none") {
+        x.style.display = "block";
+    } else {
+        x.style.display = "none";
+    }
+}
+
+
 var muted = false;
 function mutePage() {
     var elems = document.querySelectorAll("video, audio");
