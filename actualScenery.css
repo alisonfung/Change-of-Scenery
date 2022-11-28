@@ -105,7 +105,27 @@ img {
     height: 60%;
     background-color: rgba(217, 217, 217, 0.5);
     z-index: 2;
+}
 
+#timer {
+    margin: auto;
+    position: fixed;
+    top: 5vw;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 50%;
+    height: 60%;
+    background-color: rgba(217, 217, 217, 0.5);
+    z-index: 2;
+}
+
+#customize_section {
+    margin-top: 12%;
+}
+
+#timer_section {
+    margin-top: 12%;
 }
 
 .close-button{
