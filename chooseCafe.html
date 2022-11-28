@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+        <link rel = "stylesheet" href = "chooseCategory.css">
+        <link rel = "stylesheet" href = "https://fonts.googleapis.com/css?family=Raleway">
+
+    </head>
+    <body>
+    <header>
+        <div class="navigation">
+            <a id="home" href="index.html">home</a>
+            <a id="scenery" href="chooseCategory.html">scenery list</a>
+            <a id="about" href="#">about</a>
+        </div>
+        <h2><a href="#" class="logo">Logo</a></h2>
+    </header>
+    <div class="title"><p>Cafes and Libraries</p></div>
+    <div class="row">
+        <div class="column-left">
+            <img id = "option1" class = "optionPics" src = "images/Cafe.png">
+            <p id="label1" class = "labels">Cafe</p>
+            <p id = "description1" class = "descriptions">Enjoy some coffee while you work!</p>
+            <div class = "center">
+                <a id = "link1" href = "actualScenery.html" class = "links">Visit Here</a>
+            </div>
+        </div>
+        <div class="column-center">
+            <img id = "option2" class = "optionPics" src = "images/NewYork_Library.png">
+            <p id="label2" class="labels">New York Library</p>
+            <p id = "description2" class = "descriptions">Study in the gorgeous New York public library!</p>
+            <div class = "center">
+                <a id="link2" href = "actualScenery.html" class = "links">Visit Here</a>
+            </div>
+        </div>
+        <div class="column-right">
+            <img id = "option3" class = "optionPics" src = "images/Tavern.png">
+            <p id="label3" class="labels">Tavern</p>
+            <p id = "description3" class = "descriptions">Enjoy the cozy vibes of this tavern!</p>
+            <div class = "center">
+                <a id = "link3" href = "actualScenery.html" class = "links">Visit Here</a>
+            </div>
+        </div>
+    </div>
+    <script>
+            const cafe = document.getElementById("link1");
+            const library = document.getElementById("link2");
+            const tavern = document.getElementById("link3");
+            cafe.addEventListener('click', function(e){
+                e.preventDefault();
+                const placeValue = 3;
+                localStorage.setItem('place',placeValue);
+                window.location.href = "actualScenery.html"
+            })
+            library.addEventListener('click', function(e){
+                e.preventDefault();
+                const placeValue = 4;
+                localStorage.setItem('place',placeValue);
+                window.location.href = "actualScenery.html"
+            })
+            tavern.addEventListener('click', function(e){
+                e.preventDefault();
+                const placeValue = 5;
+                localStorage.setItem('place',placeValue);
+                window.location.href = "actualScenery.html"
+            })
+            </script>
+    </body>
+</html>

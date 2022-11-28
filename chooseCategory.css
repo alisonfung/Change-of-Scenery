@@ -1,0 +1,130 @@
+
+
+header{
+    position: relative;
+    width: 100%;
+    padding-left: 50px;
+    padding-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(239, 219, 188, 1);
+
+}
+
+header .navigation a{
+    position: relative;
+    color: #000;
+    text-decoration: none;
+    font-weight: 500;
+    letter-spacing: 1px;
+    font-size: 35px;
+    border-radius: 30px;
+    transition: 0.3s;
+    transition-property: background;
+}
+
+header .navigation a:not(:last-child){
+    margin-right: 40px;
+}
+
+header .logo{
+    color: #000;
+    font-size: 30px;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 800;
+    letter-spacing: 1px;
+    padding: 2px 15px;
+
+}
+
+header .navigation a:hover{
+    background: #fff;
+    text-decoration: underline;
+}
+
+body{
+   position: absolute;
+   width: 90%;
+   height: 90%;
+   background: #EFDBBC; 
+   font-family: 'Raleway';
+}
+.optionPics{
+    width: 22vw;
+    height: 15vw;
+    border: 5px solid #000000;
+    display: block;
+    margin: auto;
+
+}
+.column-left{ float: left; width: 33%; align-items: center; justify-items: center;}
+.column-right{ float: right; width: 33%; align-items: center; justify-items: center;}
+.column-center{ display: inline-block; width: 33%; align-items: center; justify-items: center;}
+
+@media screen and (max-width: 960px) {
+    .column-left{ float: none; width: 100%; }
+    .column-right{ float: none; width: 100%; }
+    .column-center{ display: block; width: 100%; }
+}
+
+.row {
+    margin-left: 5vw;
+    margin-right: 5vw;
+    top: -5vw;
+}
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.title{
+    font-style:normal;
+    font-weight:600;
+    font-size:5vw;
+    line-height: 78px;
+    text-align: center;
+    position: relative;
+    top: -2vw;
+}
+.labels{
+    top:60%;
+    font-size:3vh;
+    font-weight:600;
+
+    text-align:center;
+}
+.descriptions{
+    top:65%;
+    text-align:center;
+    font-size:3vh;
+    font-weight:200;
+    margin-left: 2vw;
+    margin-right: 2vw;
+}
+.center {
+    text-align:center;
+    width: 100%;
+
+
+}
+.links{
+    text-align:center;
+    display:inline-block;
+    top:75%;
+    font-size:3vh;
+    font-weight: 600;
+    background-color:#EAD2CD;
+    width: 15vw;
+    height: 5%;
+    padding: 1em;
+    border: 5px solid black;
+    color:#000000;
+    text-decoration: none;
+    margin-left:auto;
+    margin-right:auto;
+    margin-bottom: 5vw;
+}

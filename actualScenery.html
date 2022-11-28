@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Studying...</title>
+    <link rel = "stylesheet" href = "actualScenery.css">
+    <link rel = "stylesheet" href = "https://fonts.googleapis.com/css?family=Raleway">
+    <link rel="stylesheet" href="widgetBar.css">
+    <script src="https://kit.fontawesome.com/913b200d8d.js" crossorigin="anonymous"></script>
+    <script src = "actualScenery.js"></script>
+
+</head>
+
+<body>
+
+    <header>
+        <div class="navigation">
+            <a id="home" href="index.html">home</a>
+            <a id="scenery" href="chooseCategory.html">scenery list</a>
+            <a id="about" href="#">about</a>
+        </div>
+    </header>
+
+    <div id="spotify" style="display: none">
+        <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/7hZhwoGDXw3P89zrbErSBA?utm_source=generator"
+                width="75%" height="380" frameBorder="0" allowfullscreen=""
+                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy">
+        </iframe>
+    </div>
+
+    <div class="icon-bar">
+    <nav>
+        <ul>
+            <li><a href="#" onclick="showSettings()">
+                <i class="fa-solid fa-gear"></i>
+                <span>Settings</span></a>
+            </li>
+
+            <li><a href="#" onclick="mutePage()">
+                <i class="fa-solid fa-volume-high"></i>
+                <span>Sound</span></a>
+            </li>
+
+            <li><a href="#">
+                <i class="fa-solid fa-clock"></i>
+                <span>Timer</span></a>
+            </li>
+
+            <li><a href="#" onclick="showSpotify()">
+                <i class="fa-brands fa-spotify"></i>
+                <span>Spotify</span></a>
+            </li>
+
+            <li><a href="#">
+                <i class="fa-solid fa-book"></i>
+                <span>Finish Trip</span></a>
+            </li>
+
+        </ul>
+    </nav>
+    </div>
+
+    <div class="container-box">
+        <div id="overlay" style="display: none">
+            <div>
+                <button class="close-button" onclick="off()">X</button>
+            </div>
+            <div class="settings-title">
+                <p>settings</p>
+            </div>
+            <div class = "row">
+                <div class="sound-title" style="vertical-align: text-top">
+                    <p>water sounds</p>
+                </div>
+                    <audio controls controlsList="nodownload noplaybackrate" autoplay loop preload="auto" >
+                        <source src = "audio/watersounds.wav" type = "audio/wav"/>
+                    </audio>
+            </div>
+            <div class = "row">
+                <div class="sound-title" style="vertical-align: text-top">
+                    <p>birds chirping</p>
+                </div>
+                <audio controls controlsList="nodownload noplaybackrate" id="birds"autoplay loop preload="auto" >
+                    <source src = "audio/birds.wav" type = "audio/wav"/>
+                </audio>
+            </div>
+            <div class = "row">
+                <div class="sound-title" style="vertical-align: text-top">
+                    <p>leaves rustling</p>
+                </div>
+                <audio controls controlsList="nodownload noplaybackrate" autoplay loop preload="auto" >
+                    <source src = "audio/wind.wav" type = "audio/wav"/>
+                </audio>
+
+            </div>
+        </div>
+    </div>
+
+    <div class =  "scenery">
+        <img id = "current">
+    </div>
+    <script>
+         const pic = localStorage.getItem('place');
+        let picNum = parseInt(pic);
+        selectScenery(picNum);
+    </script>
+</body>
