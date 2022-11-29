@@ -138,7 +138,8 @@ img {
     margin-right: 1vw;
     position: absolute;
     right: 0%;
-    transform: translate(-0%, -0%)
+    transform: translate(-0%, -0%);
+    z-index: 1000;
 }
 .row{
     display: flex;

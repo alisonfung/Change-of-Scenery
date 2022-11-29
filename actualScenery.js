@@ -41,10 +41,13 @@ function on() {
     document.getElementById("overlay").style.display = "block";
 }
 
-function off() {
+function overlay_off() {
     document.getElementById("overlay").style.display = "none";
 }
 
+function timer_off() {
+    document.getElementById("timer").style.display = "none";
+}
 
 function showSpotify()
 {
